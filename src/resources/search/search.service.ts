@@ -17,6 +17,7 @@ export class SearchService {
         'tasks.title',
         'tasks.order',
         'tasks.description',
+        'tasks.done',
         'tasks.userId',
         'tasks.boardId',
         'tasks.columnId',
