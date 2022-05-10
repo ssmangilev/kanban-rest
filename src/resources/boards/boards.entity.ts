@@ -38,9 +38,11 @@ export class Board extends BaseEntity {
   description!: string;
 
   /** @public array of objects the column */
+  @ApiProperty({ example: '0', description: 'Count of columns' })
   @OneToMany(() => Column, (column) => column.board, { onDelete: 'CASCADE', onUpdate: 'CASCADE' })
   columns!: CreateColumnDto[];
 
+ @ApiProperty({ example: '0', description: 'Count of tasks' })
   @OneToMany(() => Task, (task) => task.board, { onDelete: 'CASCADE', onUpdate: 'CASCADE' })
   tasks!: Task[];
 }
