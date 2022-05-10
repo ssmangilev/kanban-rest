@@ -23,6 +23,8 @@ export class BoardsService {
   async getAll(): Promise<IBoard[]> {
     const resp = await this.boardsRepository
       .createQueryBuilder('boards')
+      .loadRelationCountAndMap('boards.columnsCount', 'boards.columns')
+      .loadRelationCountAndMap('boards.tasksCount', 'boards.tasks')
       .getMany();
     return resp;
   }
