@@ -52,7 +52,7 @@ async function bootstrap() {
     .setTitle('Kanban service')
     .setDescription('The kanban service API description')
     .setVersion('1.0')
-    .addServer(`http://localhost:${PORT}`)
+    .addServer(`/`)
     .addBearerAuth(
       {
         in: 'header',
